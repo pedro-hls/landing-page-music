@@ -16,13 +16,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* @include flexCenter */
+    flex-wrap: wrap;
+    /* @include flexCenter() */
 }
 
 @mixin flexSpaceBetween(){
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* @include flexSpaceBetween() */
 }
 
 
@@ -106,9 +108,15 @@
 .main-container {
     @include flexCenter();
     flex-wrap: wrap;
+    flex-direction: row;
     margin-top: 30px;
     height: 500px;
     margin-bottom: 45px;
+
+    .main-page-text {
+        @include flexCenter();
+        flex-direction: column;
+    }
 
     h1 {
         font-size: 48px;
@@ -122,25 +130,121 @@
         margin: 0px 5px;
     }
     button {
-        background-color: $shadowColor;
+        background-color: $primaryColor;
         width: 145px;
         height: 45px;
         border-radius: 15px;
         border: none;
+        border-bottom: 5px solid $shadowColor;
         margin-top: 30px;
         color: $white;
         font-weight: 600;
         font-size: 18px;
+
+        &:hover {
+            border-bottom: 2px solid $shadowColor;
+        }
     }
     .main-image{
         width: 90%;
+        max-width: 550px;
         margin: 25px 0px 10px 0px;
         filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.185));
     }
 }
 
+.title-section {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: $white;
+    height: 70px;
+    @include flexCenter();
+    width: 100%;
+    border-bottom: 1px solid $shadowColor;
+}
+
 .services-container {
     background-color: $primaryColor;
-    height: 1030px;
     @include flexCenter();
+    flex-wrap: wrap;
+
+    .services-types-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .services-image {
+            width: 80%;
+            position: absolute;
+            filter: drop-shadow(0px 15px 10px rgba(0, 0, 0, 0.26))
+        }
+
+        div {
+            @include flexCenter();
+            flex-direction: column;
+            margin-top: 90px;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .plan-type {
+            background-color: $white;
+            height: 200px;
+            width: 320px;
+            font-size: 36px;
+            color: $shadowColor;
+            @include flexCenter();
+            text-align: center;
+            border-bottom: 10px solid $shadowColor;
+            text-transform: uppercase;
+            border-radius: 15px;
+        }
+
+        .plan-price {
+            font-size: 36px;
+            color: $white;
+            font-weight: 300;
+            margin-top: 15px;
+            span {
+                font-size: 21px;
+                color: $white;
+            }
+        }
+
+        .keyboard-image {
+            top: -130px;
+        }
+
+        .microphone-image {
+            top: -130px;
+            width: 70%;
+        }
+
+        .mix-image {
+            top: -150px;
+        }
+    }
+}
+
+.about-container {
+    @include flexCenter;
+    flex-direction: collumn;
+    font-weight: 500;
+
+    h3 {
+        color: $shadowColor;
+    }
+
+    .description-stu {
+        margin: 0px 30px;
+        text-align: center;
+        font-size: 21px;
+        margin-top: 30px
+        ;
+    }
+
+    .stu {
+        font-weight: 800;
+        font-style: italic;
+    }
 }
