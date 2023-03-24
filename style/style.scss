@@ -1,0 +1,146 @@
+@import "./colors";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: $black;
+    list-style: none;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+@mixin flexCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* @include flexCenter */
+}
+
+@mixin flexSpaceBetween(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.body {
+    @include flexCenter();
+}
+
+.header-container {
+
+    .nav-container {
+        @include flexSpaceBetween();
+        height: 70px;
+        padding: 0px 20px;
+        box-shadow: 0px 1px $grey;
+    }
+
+    .logo-container {
+        @include flexCenter();
+
+        .logo-icon {
+            font-size: 30px;
+            @include flexCenter();
+        }
+
+        .logo-title {
+            font-size: 30px;
+            font-weight: 400;
+            margin-left: 10px
+        }
+    }
+
+    .right-icons {
+        @include flexCenter();
+
+        a {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+        }
+
+        .github-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .hamburguer-icon {
+            font-size: 30px;
+        }
+    }
+
+    .nav-list-container {
+        display: none;
+        font-size: 18px;
+        position: relative;
+
+        li {
+            @include flexCenter();
+            height: 50px;
+            box-shadow: inset 0px -1px $grey;
+
+        &:hover {
+            background-color: $primaryColor;
+            a {
+                color: $white;
+            }
+        }
+        }
+    }
+
+    .display-menu {
+        display: block;
+    } 
+}
+
+@media (max-width: 768px) {
+    .nav-options-container {
+        display: none;
+    }
+}
+
+.main-container {
+    @include flexCenter();
+    flex-wrap: wrap;
+    margin-top: 30px;
+    height: 500px;
+    margin-bottom: 45px;
+
+    h1 {
+        font-size: 48px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: 26px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 0px 5px;
+    }
+    button {
+        background-color: $shadowColor;
+        width: 145px;
+        height: 45px;
+        border-radius: 15px;
+        border: none;
+        margin-top: 30px;
+        color: $white;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .main-image{
+        width: 90%;
+        margin: 25px 0px 10px 0px;
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.185));
+    }
+}
+
+.services-container {
+    background-color: $primaryColor;
+    height: 1030px;
+    @include flexCenter();
+}
