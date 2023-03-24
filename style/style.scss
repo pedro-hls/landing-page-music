@@ -161,6 +161,7 @@
     @include flexCenter();
     width: 100%;
     border-bottom: 1px solid $shadowColor;
+    font-weight: 400;
 }
 
 .services-container {
@@ -174,7 +175,7 @@
         flex-wrap: wrap;
 
         .services-image {
-            width: 80%;
+            width: 70%;
             position: absolute;
             filter: drop-shadow(0px 15px 10px rgba(0, 0, 0, 0.26))
         }
@@ -182,16 +183,16 @@
         div {
             @include flexCenter();
             flex-direction: column;
-            margin-top: 90px;
+            margin-top: 75px;
             margin-bottom: 45px;
             position: relative;
         }
 
         .plan-type {
             background-color: $white;
-            height: 200px;
-            width: 320px;
-            font-size: 36px;
+            height: 190px;
+            width: 310px;
+            font-size: 32px;
             color: $shadowColor;
             @include flexCenter();
             text-align: center;
@@ -201,7 +202,7 @@
         }
 
         .plan-price {
-            font-size: 36px;
+            font-size: 28px;
             color: $white;
             font-weight: 300;
             margin-top: 15px;
@@ -212,12 +213,12 @@
         }
 
         .keyboard-image {
-            top: -130px;
+            top: -120px;
         }
 
         .microphone-image {
-            top: -130px;
-            width: 70%;
+            top: -125px;
+            width: 65%;
         }
 
         .mix-image {
@@ -238,13 +239,64 @@
     .description-stu {
         margin: 0px 30px;
         text-align: center;
-        font-size: 21px;
-        margin-top: 30px
-        ;
+        font-size: 26px;
+        margin-top: 60px;
     }
 
     .stu {
-        font-weight: 800;
+        font-weight: 900;
         font-style: italic;
+        font-size: 28px;
+        margin: 0px 5px;
     }
+
+    img {
+        width: 70%;
+        margin: 60px 0px;
+    }
+}
+
+.artists-container {
+    background-color: $primaryColor;
+    @include flexCenter();
+
+    img {
+        width: 92%;
+        border-radius: 10px 10px 50px 50px;
+        margin-top: 10px;
+    }
+
+    .artist-banner {
+        background-color: $white;
+        @include flexCenter();
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 250px;
+        margin: 30px 0px;
+        border-bottom: 15px solid $shadowColor;
+        border-radius: 15px;
+        
+    .artist-name {
+        color: $shadowColor;
+        font-size: 26px;
+        text-transform: uppercase;
+        padding-top: 10px;
+    }
+    p {
+        color: $shadowColor;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        font-size: 18px;
+    }
+    }
+}
+
+.stu-contact {
+    border-top: 1px solid $shadowColor;
+    @include flexCenter();
+    text-align: center;
+    height: 70px;
+    background-color: $primaryColor;
+    color: $white;
+    font-size: 21px;
 }
